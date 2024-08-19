@@ -3,102 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع شخصي</title>
+    <title>تصميم موقع</title>
     <style>
-        body, html {
+        body {
             margin: 0;
             padding: 0;
-            height: 100%;
-            overflow: hidden; /* لمنع التحريك العمودي والأفقي */
-            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            background-image: url("images/photo_2024-08-18_23-53-56.jpg"); /* استبدل 'background.jpg' برابط صورة الخلفية */
+            background-size: cover;
+            background-position: center;
         }
-
-        .background-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* لتغطية الشاشة بالكامل بدون تحرك الفيديو */
-            z-index: -1;
-        }
-
-        .content {
+        .container {
             text-align: center;
-            width: 90%;
-            max-width: 320px; /* عرض المحتوى سيكون مناسباً للشاشات الصغيرة */
+            width: 100%;
         }
-
-        .profile-pic {
-            width: 50%; /* ضبط حجم الصورة ليكون مناسباً للشاشات الصغيرة */
-            max-width: 150px;
-            height: auto;
+        .circle {
+            width: 200px;
+            height: 200px;
+            background-image: url("images/photo_2024-08-18_23-23-31.jpg"); /* استبدل 'your-photo.jpg' برابط صورتك الشخصية */
+            background-size: cover;
+            background-position: center;
             border-radius: 50%;
-            background-color: grey;
-            margin-bottom: 20px;
+            margin: 0 auto 30px auto; /* هذا السطر يضمن أن الصورة في المنتصف */
         }
-
-        .social-links {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .social-links a {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            text-align: center;
+        .social {
+            margin: 10px auto;
+            padding: 20px;
             color: white;
+            font-size: 20px;
             text-decoration: none;
-            font-size: 14px;
-            border-radius: 5px;
+            display: block;
+            width: 300px;
+            text-align: center;
+            transition: background-color 0.3s ease;
         }
-
-        .facebook { background-color: #3b5998; } /* أزرق للفيسبوك */
-        .instagram { background-color: #e4405f; } /* أحمر للإنستقرام */
-        .tiktok { background-color: #000000; } /* أسود للتيك توك */
-    
-        
-        /* تحسين العرض للشاشات الصغيرة جداً */
-        @media only screen and (max-width: 400px) {
-            .profile-pic {
-                width: 60%; /* تكبير قليلاً ليتناسب مع الشاشات الأصغر */
-            }
-
-            .social-links a {
-                font-size: 12px;
-                padding: 10px;
-            }
+        .facebook {
+            background-color: #3b5998; /* أزرق لفيسبوك */
+        }
+        .instagram {
+            background-color: #e4405f; /* برتقالي لإنستغرام */
+        }
+        .tiktok {
+            background-color: #000000; /* أسود لتيكتوك */
+        }
+        .social:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
-    <!-- خلفية الفيديو -->
-    <img src="C:\Users\موسى علي\Documents\myprof\image\photo_2024-07-22_09-11-20.jpg" class="background-video">
-
-    <!-- المحتوى -->
-    <div class="content">
-        <img src="C:\Users\موسى علي\Desktop\a\New folder\photo_2024-08-13_00-27-46.jpg" alt="صورة شخصية" class="profile-pic" id="profilePic">
-        <div class="social-links">
-            <a href="https://www.facebook.com/my4ygg?mibextid=ZbWKwL" class="facebook">فيسبوك</a>
-            <a href="https://www.instagram.com/musa.iraq_?igsh=MWs1bWNoYmFhaXJieQ==" class="instagram">إنستقرام</a>
-            <a href="https://www.tiktok.com/@musa_iraq?_t=8oinVHv5DcO&_r=1" class="tiktok">تيك توك</a>
-            
-        </div>
+    <div class="container">
+        <div class="circle"></div>
+        <a href="https://www.facebook.com/my4ygg?mibextid=ZbWKwL" class="social facebook">Facebook</a>
+        <a href="https://www.instagram.com/musa.iraq_?igsh=MWs1bWNoYmFhaXJieQ==" class="social instagram">Instagram</a>
+        <a href="https://www.tiktok.com/@musa_iraq?_t=8oinVHv5DcO&_r=1" class="social tiktok">TikTok</a>
     </div>
-
-    <!-- جافاسكريبت لتغيير الصورة الشخصية -->
-    <script>
-        document.getElementById('profilePic').addEventListener('click', function() {
-            var newPic = prompt("أدخل رابط الصورة الجديدة:");
-            if (newPic) {
-                this.src = newPic;
-            }
-        });
-    </script>
 </body>
 </html>
