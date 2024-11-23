@@ -1,65 +1,98 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تصميم موقع</title>
+    <title>Social Link Hub</title>
     <style>
+        /* إعداد الصفحة */
         body {
             margin: 0;
             padding: 0;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            background: black; /* لون خلفي أساسي */
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-image: url("https://ar.pikbest.com/photo/vertical-shot-of-a-road-going-through-beautiful-colorful-trees-captured-in-day-time_9421860.html"); /* استبدل 'background.jpg' برابط صورة الخلفية */
-            background-size: cover;
-            background-position: center;
+            overflow: hidden; /* منع التمرير */
         }
+
+        /* خلفية النقاط الخضراء المتحركة */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background-image: radial-gradient(circle, green 2px, transparent 2px);
+            background-size: 50px 50px;
+            background-color: black;
+            animation: moveAnts 5s linear infinite;
+            z-index: -1;
+        }
+
+        /* حركة النقاط */
+        @keyframes moveAnts {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-50px, -50px);
+            }
+        }
+
+        /* تصميم الحاوية */
         .container {
             text-align: center;
-            width: 100%;
-        }
-        .circle {
-            width: 200px;
-            height: 200px;
-            background-image: url("images/photo_2024-08-18_23-23-31.jpg"); /* استبدل 'your-photo.jpg' برابط صورتك الشخصية */
-            background-size: cover;
-            background-position: center;
-            border-radius: 50%;
-            margin: 0 auto 30px auto; /* هذا السطر يضمن أن الصورة في المنتصف */
-        }
-        .social {
-            margin: 10px auto;
-            padding: 20px;
             color: white;
-            font-size: 20px;
-            text-decoration: none;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* الروابط */
+        .links {
+            margin-top: 20px;
+        }
+
+        .btn {
             display: block;
-            width: 300px;
-            text-align: center;
-            transition: background-color 0.3s ease;
+            margin: 10px auto;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid white;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease;
         }
-        .facebook {
-            background-color: #3b5998; /* أزرق لفيسبوك */
-        }
-        .instagram {
-            background-color: #e4405f; /* برتقالي لإنستغرام */
-        }
-        .tiktok {
-            background-color: #000000; /* أسود لتيكتوك */
-        }
-        .social:hover {
-            opacity: 0.8;
+
+        .btn:hover {
+            background-color: white;
+            color: black;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="circle"></div>
-        <a href="https://www.facebook.com/my4ygg?mibextid=ZbWKwL" class="social facebook">Facebook</a>
-        <a href="https://www.instagram.com/musa.iraq_?igsh=MWs1bWNoYmFhaXJieQ==" class="social instagram">Instagram</a>
-        <a href="https://www.tiktok.com/@musa_iraq?_t=8oinVHv5DcO&_r=1" class="social tiktok">TikTok</a>
+        <div class="content">
+            <h1>Welcome to My Social Hub</h1>
+            <p>Connect with me on social media!</p>
+            <div class="links">
+                <a href="https://facebook.com" target="_blank" class="btn">Facebook</a>
+                <a href="https://instagram.com" target="_blank" class="btn">Instagram</a>
+                <a href="https://tiktok.com" target="_blank" class="btn">TikTok</a>
+                <a href="https://t.me" target="_blank" class="btn">Telegram</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
